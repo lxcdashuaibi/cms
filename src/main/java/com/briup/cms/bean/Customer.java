@@ -9,7 +9,7 @@ public class Customer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String username;
-    protected String password;
+    private String password;
 
     public int getId() {
         return id;

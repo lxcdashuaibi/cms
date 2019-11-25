@@ -1,9 +1,10 @@
-server:
-  prot:9998
+
 
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://59.110.235.86:3306/ssm?useunicode=true;&characterEncoding=utf8
-    data-username: root
-    data-password: root
+    url: jdbc:mysql://59.110.235.86:3306/cms?useunicode=true;&characterEncoding=utf8
+    username: root
+    password: root
+server:
+  port: 8099
