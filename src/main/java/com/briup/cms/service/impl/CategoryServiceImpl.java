@@ -19,8 +19,17 @@ public class CategoryServiceImpl implements ICategoryService {
     public void saveOrUpdate(Category category) throws CustomerException {
         if(category==null) {
             throw new CustomerException(CodeUtil.BAD_CODE,"参数为空");
+        } else {
+            categoryDao.save(category);
         }
-        categoryDao.save(category);
+        Category category1 = categoryDao.queryById(category.getId());
+        if (category1 == null) {
+            throw new CustomerException(CodeUtil.BAD_CODE,"参数为空");
+        } else {
+            category1.setCode(category1.getCode());
+            category1.setName(category1.getName());
+            categoryDao.save(category1);
+        }
     }
 
     @Override

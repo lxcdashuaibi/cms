@@ -19,7 +19,7 @@ public class Category implements Serializable {
     @ApiModelProperty(value = "栏目编号",required = true)
     private long code;
 
-    @ApiModelProperty(value = "栏目名称",required = true)
+    @ApiModelProperty(value = "栏目名称",required = false)
     private String name;
 
     public int getId() {

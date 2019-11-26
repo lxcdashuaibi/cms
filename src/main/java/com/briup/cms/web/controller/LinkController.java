@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("link")
+@RequestMapping("/link")
 @Api(description = "链接管理")
 public class LinkController {
     @Autowired
@@ -25,7 +25,7 @@ public class LinkController {
     @PostMapping("/add")
     @ApiOperation("添加链接")
     public Message addLink(Link link) {
-        linkService.saveAndUpdate(link);
+        linkService.saveOrUpdate(link);
         return MessageUtil.success();
     }
 
@@ -48,7 +48,7 @@ public class LinkController {
     @PostMapping("/update")
     @ApiOperation("修改连接")
     public Message updateLink(Link link) {
-        linkService.saveAndUpdate(link);
+        linkService.saveOrUpdate(link);
         return MessageUtil.success();
     }
 

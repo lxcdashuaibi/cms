@@ -1,14 +1,20 @@
 package com.briup.cms.bean;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "cms_article")
+@ApiModel
 public class Article implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty(value = "信息id")
     private int id;
     private String author;
     private int clickTimes;
