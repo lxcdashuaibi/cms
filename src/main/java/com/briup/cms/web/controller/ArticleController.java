@@ -45,6 +45,14 @@ public class ArticleController {
         Article article = articleService.findById(id);
         return MessageUtil.success(article);
     }
+
+    @PostMapping("/updateArticle")
+    @ApiOperation("根据id修改信息")
+    public Message updateAticle(Article article) {
+        articleService.updateArticle(article);
+        return MessageUtil.success();
+    }
+
     @GetMapping("/findAll")
     @ApiOperation("查询所有信息")
     public Message<List<Article>> findAll() {

@@ -46,7 +46,7 @@ public class ArticleServiceImpl implements IArticleService {
         }
         article1.setTitle(article1.getTitle());
         article1.setAuthor(article1.getAuthor());
-        article1.setCategory(article1.getCategory());
+        //article1.setCategory(article1.getCategory());
         articleDao.save(article1);
     }
 
