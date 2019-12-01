@@ -25,7 +25,7 @@ public class LoginFailHandler implements AuthenticationFailureHandler {
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
-       response.setContentType("application/json;charset=utf-8");
+       response.setContentType("application/json;charset=utf-8");//防止乱码，手动转的需要设置 springmvc自动转不需要设置。
         Message<Object> me = MessageUtil.error(403, "登陆失败");
         response.getWriter().println(objectMapper.writeValueAsString(me));
     }

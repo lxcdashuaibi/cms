@@ -31,7 +31,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     private UserDetailsService userDetailsService;
 
     @Autowired
-    private ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;//将对象转json
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
@@ -39,14 +39,14 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         try {
             UserDetails userDetails = userDetailsService.loadUserByUsername(authentication.getName());
 
-            String token = JwtTokenUtils.createToken(userDetails, false);
+            String token = JwtTokenUtils.createToken(userDetails, false);//产生token
 
-            token = JwtTokenUtils.TOKEN_PREFIX + token;
+            token = JwtTokenUtils.TOKEN_PREFIX + token;//将token以json的形式返回，并且放在请求头中
 
             response.setHeader(JwtTokenUtils.TOKEN_HEADER,token);
 
             Message<String> message = MessageUtil.success(token);
-            response.getWriter().println(objectMapper.writeValueAsString(message));
+            response.getWriter().println(objectMapper.writeValueAsString(message));//将对象转json
         } catch (Exception e) {
             Message<Object> message = MessageUtil.error(403, "登陆失败");
             response.getWriter().println(objectMapper.writeValueAsString(message));

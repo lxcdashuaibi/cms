@@ -39,19 +39,28 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-              <groupId>io.springfox</groupId>
-              <artifactId>springfox-swagger2</artifactId>
-              <version>2.6.1</version>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.6.1</version>
         </dependency>
+
         <dependency>
-              <groupId>io.springfox</groupId>
-              <artifactId>springfox-swagger-ui</artifactId>
-              <version>2.6.1</version>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.6.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
-            <artifactId>commons-long3</artifactId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
+
+
+        <!--
+            链接：https://pan.baidu.com/s/1jKHanfdWXcDmDIvD72RI-A
+            提取码：xv5z
+            复制这段内容后打开百度网盘手机App，操作更方便哦
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
